@@ -48,7 +48,7 @@ jobs:
       with:
         java-version: 1.8
     - name: Test with Maven
-      run: mvn -B package --file pom.xml test
+      run: mvn clean test
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
