@@ -40,7 +40,7 @@ jobs:
     - name: Test with Maven
       run: mvn clean test
   test_2:
-    runs-on: macos-10.15.5
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 19
