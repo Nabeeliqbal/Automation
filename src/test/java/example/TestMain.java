@@ -27,8 +27,7 @@ public class TestMain {
         driver.manage().window().maximize();
         driver.findElement(By.xpath("//div[@class='text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white']//*[name()='svg']")).click();
         Thread.sleep(3000);
-        WebElement d1 = driver.findElement(By.xpath("//a[normalize-space()='Find Doctor']"));
-        d1.click();
+        driver.findElement(By.xpath("//a[normalize-space()='Find Doctor']")).click();
         Thread.sleep(3000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,3000)", "");
