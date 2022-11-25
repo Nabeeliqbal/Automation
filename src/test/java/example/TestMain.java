@@ -24,7 +24,7 @@ public class TestMain {
         WebDriver driver;
         driver = new ChromeDriver(opt);
 //        WebDriver driver = new ChromeDriver();
-        driver.get("https://e-mareez.com/");
+        driver.get("https://e-mareezaa.com/");
         driver.manage().window().maximize();
         driver.findElement(By.xpath("//div[@class='text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white']//*[name()='svg']")).click();
         Thread.sleep(3000);
