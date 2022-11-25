@@ -4,11 +4,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class TestMain {
-    WebDriver driver;
+
     @org.junit.Test
     @Test
     public void firstTest() throws InterruptedException {
@@ -21,8 +20,9 @@ public class TestMain {
         opt.addArguments("--disable-dev-shm-usage");
 
         opt.addArguments("--headless");
+        WebDriver driver;
         driver = new ChromeDriver(opt);
-        WebDriver driver = new ChromeDriver();
+//        WebDriver driver = new ChromeDriver();
         driver.get("https://e-mareez.com/");
         driver.manage().window().maximize();
         driver.findElement(By.xpath("//div[@class='text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white']//*[name()='svg']")).click();
