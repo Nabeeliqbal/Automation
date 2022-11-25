@@ -8,7 +8,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class TestMain {
-
+    WebDriver driver;
+    @org.junit.Test
     @Test
     public void firstTest() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
