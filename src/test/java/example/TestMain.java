@@ -15,11 +15,12 @@ public class TestMain {
 
         ChromeOptions opt = new ChromeOptions();
 
-//        opt.addArguments("--no-sandbox");
-//
-//        opt.addArguments("--disable-dev-shm-usage");
-//
-//        opt.addArguments("--headless");
+        opt.addArguments("--no-sandbox");
+        opt.addArguments("--start-maximized");
+        opt.addArguments("--window-size=1920,1080");
+        opt.addArguments("--disable-dev-shm-usage");
+
+        opt.addArguments("--headless");
         WebDriver driver;
         driver = new ChromeDriver(opt);
 //        WebDriver driver = new ChromeDriver();
