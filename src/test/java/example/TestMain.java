@@ -8,10 +8,20 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class TestMain {
-
+    WebDriver driver;
+    @org.junit.Test
     @Test
     public void firstTest() throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
 
+        ChromeOptions opt = new ChromeOptions();
+
+        opt.addArguments("--no-sandbox");
+
+        opt.addArguments("--disable-dev-shm-usage");
+
+        opt.addArguments("--headless");
+        driver = new ChromeDriver(opt);
         WebDriver driver = new ChromeDriver();
         driver.get("https://e-mareez.com/");
         driver.manage().window().maximize();
