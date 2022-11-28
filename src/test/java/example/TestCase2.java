@@ -44,7 +44,7 @@ public class TestCase2 {
         c1.click();
         Thread.sleep(3000);
         Actions dropDown = new Actions(driver);
-        dropDown.sendKeys(Keys.chord(Keys.RIGHT, Keys.RIGHT,Keys.ENTER)).perform();
+        dropDown.sendKeys(Keys.chord(Keys.RIGHT, Keys.RIGHT, Keys.RIGHT,Keys.ENTER)).perform();
         Thread.sleep(3000);
         driver.findElement(By.xpath("//div[@class='flex flex-col w-full gap-2']//div[@class=' css-tlfecz-indicatorContainer']//*[name()='svg']")).click();
         Thread.sleep(3000);
