@@ -23,11 +23,6 @@ public class Testing {
         Thread.sleep(3000);
         driver.findElement(By.xpath("//div//div//div//div//div[2]//div[1]//div[3]//div[3]//button[1]")).click();
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//button[@aria-label='Choose date, selected date is Nov 28, 2022']//*[name()='svg']")).click();
-        Thread.sleep(3000);
-        Actions dropDown = new Actions(driver);
-        dropDown.sendKeys(Keys.chord(Keys.RIGHT, Keys.ENTER)).perform();
-        Thread.sleep(3000);
         driver.findElement(By.xpath("//div[@class='flex flex-col w-full gap-2']//div[@class=' css-tlfecz-indicatorContainer']//*[name()='svg']")).click();
         Thread.sleep(3000);
         Actions dropDown2 = new Actions(driver);
@@ -39,10 +34,13 @@ public class Testing {
         Thread.sleep(3000);
         driver.findElement(By.xpath("//button[@type='submit']")).click();
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//button[@type='button']")).click();
+        Alert alert = driver.switchTo().alert();
+
+        alert.accept();
         Thread.sleep(3000);
+
         driver.close();
 
-//
+
     }
 }

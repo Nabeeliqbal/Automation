@@ -57,7 +57,10 @@ public class TestCase2 {
         driver.findElement(By.xpath("//input[@placeholder='Enter Mobile Number']")).sendKeys("03315947601");
         Thread.sleep(3000);
         driver.findElement(By.xpath("//button[@type='submit']")).click();
+        Thread.sleep(3000);
+        Alert alert = driver.switchTo().alert();
 
+        alert.accept();
         Thread.sleep(3000);
         driver.close();
     }
