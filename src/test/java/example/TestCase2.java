@@ -40,7 +40,8 @@ public class TestCase2 {
         Thread.sleep(3000);
         driver.findElement(By.xpath("//div//div//div//div//div[2]//div[1]//div[3]//div[3]//button[1]")).click();
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//button[@aria-label='Choose date, selected date is Nov 28, 2022']//*[name()='svg']")).click();
+        WebElement c1 = driver.findElement(By.xpath("//button[@aria-label='Choose date, selected date is Nov 28, 2022']//*[name()='svg']"));
+        c1.click();
         Thread.sleep(3000);
         Actions dropDown = new Actions(driver);
         dropDown.sendKeys(Keys.chord(Keys.RIGHT, Keys.RIGHT,Keys.ENTER)).perform();
