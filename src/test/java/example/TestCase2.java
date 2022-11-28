@@ -6,7 +6,10 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class TestCase2 {
     @org.junit.Test
@@ -34,10 +37,9 @@ public class TestCase2 {
         d1.click();
         Thread.sleep(3000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,3000)", "");
+        js.executeScript("window.scrollBy(0,2000)", "");
         Thread.sleep(3000);
-        WebElement c2 = driver.findElement(By.xpath("//body[1]/div[1]/main[1]/main[1]/div[1]/div[1]/div[3]/div[1]/div[2]/div[5]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/a[1]"));
-        c2.click();
+        driver.findElement(By.xpath("//div[contains(@class,'flex flex-col gap-1')]//h1[contains(@class,'font-semibold text-skin-button-primary undefined')][normalize-space()='Dr. Abdul Kareem']")).click();
         Thread.sleep(3000);
         driver.findElement(By.xpath("//div//div//div//div//div[2]//div[1]//div[3]//div[3]//button[1]")).click();
         Thread.sleep(3000);

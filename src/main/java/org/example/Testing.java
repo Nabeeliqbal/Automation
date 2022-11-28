@@ -17,7 +17,7 @@ public class Testing {
         d1.click();
         Thread.sleep(3000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,3000)", "");
+        js.executeScript("window.scrollBy(0,2000)", "");
         Thread.sleep(3000);
         driver.findElement(By.xpath("//div[contains(@class,'flex flex-col gap-1')]//h1[contains(@class,'font-semibold text-skin-button-primary undefined')][normalize-space()='Dr. Abdul Kareem']")).click();
         Thread.sleep(3000);
