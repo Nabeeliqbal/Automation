@@ -46,7 +46,8 @@ public class TestCase2 {
         c1.click();
         Thread.sleep(3000);
 
-        driver.findElement(By.xpath("//button[@aria-label='Choose date, selected date is Nov 28, 2022']//*[name()='svg']")).click();
+        WebElement c2 = driver.findElement(By.xpath("//button[@aria-label='Choose date, selected date is Nov 28, 2022']//*[name()='svg']"));
+        c2.click();
         Thread.sleep(3000);
         Actions dropDown = new Actions(driver);
         dropDown.sendKeys(Keys.chord(Keys.RIGHT, Keys.RIGHT, Keys.RIGHT,Keys.ENTER)).perform();
