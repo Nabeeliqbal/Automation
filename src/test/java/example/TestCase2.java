@@ -59,9 +59,12 @@ public class TestCase2 {
         driver.findElement(By.xpath("//button[@type='submit']")).click();
         Thread.sleep(3000);
         Alert alert = driver.switchTo().alert();
+        String alertMessage= driver.switchTo().alert().getText();
+        System.out.println(alertMessage);
 
-        alert.accept();
+
         Thread.sleep(3000);
+        alert.accept();
         driver.close();
     }
 }

@@ -2,18 +2,18 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-28T12:52:25 PKT" name="Surefire suite" finished-at="2022-11-28T12:53:33 PKT" duration-ms="67926">
+  <suite started-at="2022-11-28T13:07:48 PKT" name="Surefire suite" finished-at="2022-11-28T13:08:55 PKT" duration-ms="67420">
     <groups>
     </groups>
-    <test started-at="2022-11-28T12:52:25 PKT" name="Surefire test" finished-at="2022-11-28T12:53:33 PKT" duration-ms="67926">
+    <test started-at="2022-11-28T13:07:48 PKT" name="Surefire test" finished-at="2022-11-28T13:08:55 PKT" duration-ms="67420">
       <class name="example.TestMain">
-        <test-method signature="firstTest() throws java.lang.InterruptedException" started-at="2022-11-28T12:53:03 PKT" name="firstTest" finished-at="2022-11-28T12:53:33 PKT" duration-ms="30237" status="PASS">
+        <test-method signature="firstTest() throws java.lang.InterruptedException" started-at="2022-11-28T13:08:26 PKT" name="firstTest" finished-at="2022-11-28T13:08:55 PKT" duration-ms="29573" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- firstTest -->
       </class> <!-- example.TestMain -->
       <class name="example.TestCase2">
-        <test-method signature="secondTest() throws java.lang.InterruptedException" started-at="2022-11-28T12:52:25 PKT" name="secondTest" finished-at="2022-11-28T12:53:03 PKT" duration-ms="37627" status="PASS">
+        <test-method signature="secondTest() throws java.lang.InterruptedException" started-at="2022-11-28T13:07:48 PKT" name="secondTest" finished-at="2022-11-28T13:08:26 PKT" duration-ms="37799" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- secondTest -->

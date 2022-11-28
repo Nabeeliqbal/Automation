@@ -35,10 +35,13 @@ public class Testing {
         driver.findElement(By.xpath("//button[@type='submit']")).click();
         Thread.sleep(3000);
         Alert alert = driver.switchTo().alert();
+        String alertMessage= driver.switchTo().alert().getText(); // capture alert message
 
-        alert.accept();
+        System.out.println(alertMessage);
+
+
         Thread.sleep(3000);
-
+        alert.accept();
         driver.close();
 
 
