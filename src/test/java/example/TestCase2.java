@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -41,8 +43,10 @@ public class TestCase2 {
         Thread.sleep(3000);
         driver.findElement(By.xpath("//div[contains(@class,'flex flex-col gap-1')]//h1[contains(@class,'font-semibold text-skin-button-primary undefined')][normalize-space()='Dr. Abdul Kareem']")).click();
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//div//div//div//div//div[2]//div[1]//div[3]//div[3]//button[1]")).click();
+        WebElement c1 = driver.findElement(By.xpath("//div//div//div//div//div[2]//div[1]//div[3]//div[3]//button[1]"));
+        c1.click();
         Thread.sleep(3000);
+
         driver.findElement(By.xpath("//button[@aria-label='Choose date, selected date is Nov 28, 2022']//*[name()='svg']")).click();
         Thread.sleep(3000);
         Actions dropDown = new Actions(driver);
