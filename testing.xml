@@ -8,7 +8,7 @@
         <!-- <groups> <run> <exclude name = "Functionality" /> </run> </groups> -->
         <classes>
             <class name="example.TestMain"></class>
-
+            <class name="example.TestCase2"></class>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
