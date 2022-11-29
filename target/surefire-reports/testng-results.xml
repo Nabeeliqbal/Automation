@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-11-28T13:07:48 PKT" name="Surefire suite" finished-at="2022-11-28T13:08:55 PKT" duration-ms="67420">
+  <suite started-at="2022-11-29T09:53:36 PKT" name="Surefire suite" finished-at="2022-11-29T09:55:22 PKT" duration-ms="106217">
     <groups>
     </groups>
-    <test started-at="2022-11-28T13:07:48 PKT" name="Surefire test" finished-at="2022-11-28T13:08:55 PKT" duration-ms="67420">
+    <test started-at="2022-11-29T09:53:36 PKT" name="Surefire test" finished-at="2022-11-29T09:55:22 PKT" duration-ms="106217">
       <class name="example.TestMain">
-        <test-method signature="firstTest() throws java.lang.InterruptedException" started-at="2022-11-28T13:08:26 PKT" name="firstTest" finished-at="2022-11-28T13:08:55 PKT" duration-ms="29573" status="PASS">
+        <test-method signature="firstTest() throws java.lang.InterruptedException" started-at="2022-11-29T09:54:53 PKT" name="firstTest" finished-at="2022-11-29T09:55:22 PKT" duration-ms="29396" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- firstTest -->
       </class> <!-- example.TestMain -->
+      <class name="example.Test_find_clinics">
+        <test-method signature="testcase3() throws java.lang.InterruptedException" started-at="2022-11-29T09:54:14 PKT" name="testcase3" finished-at="2022-11-29T09:54:53 PKT" duration-ms="39115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testcase3 -->
+      </class> <!-- example.Test_find_clinics -->
       <class name="example.TestCase2">
-        <test-method signature="secondTest() throws java.lang.InterruptedException" started-at="2022-11-28T13:07:48 PKT" name="secondTest" finished-at="2022-11-28T13:08:26 PKT" duration-ms="37799" status="PASS">
+        <test-method signature="secondTest() throws java.lang.InterruptedException" started-at="2022-11-29T09:53:36 PKT" name="secondTest" finished-at="2022-11-29T09:54:14 PKT" duration-ms="37621" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- secondTest -->
