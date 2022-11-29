@@ -9,6 +9,7 @@
         <classes>
             <class name="example.TestMain"></class>
             <class name="example.TestCase2"></class>
+            <class name="example.Test_find_clinics"></class>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
