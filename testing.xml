@@ -6,7 +6,7 @@
 
     <test thread-count="5" name="Test">
         <!-- <groups> <run> <exclude name = "Functionality" /> </run> </groups> -->
-        <classes>
+<!--        <classes>-->
 <!--            <class name="example.TestMain"></class>-->
 <!--            <class name="example.TestCase2"></class>-->
 <!--            <class name="example.Test_find_clinics"></class>-->
