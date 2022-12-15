@@ -10,6 +10,7 @@
             <class name="example.TestMain"></class>
             <class name="example.TestCase2"></class>
             <class name="example.Test_find_clinics"></class>
+            <class name="example.Doctor_Signup_Online"></class>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
