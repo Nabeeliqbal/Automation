@@ -22,7 +22,47 @@ public class Doctor_Signup_Online {
     @org.junit.Test
     @Test
 
-    static  void OnlineConsultation(WebDriver driver) throws InterruptedException {
+    public static void testcase4(String[] args) throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
+
+        ChromeOptions opt = new ChromeOptions();
+
+        opt.addArguments("--no-sandbox");
+        opt.addArguments("--start-maximized");
+        opt.addArguments("--window-size=1920,1080");
+        opt.addArguments("--disable-dev-shm-usage");
+
+        opt.addArguments("--headless");
+        WebDriver driver;
+        driver = new ChromeDriver(opt);
+        // Setup Network to access api response
+        DevTools devTools = ((ChromeDriver) driver).getDevTools();
+        devTools.createSession();
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+
+        // Add listener to receive API cal response
+        devTools.addListener(Network.responseReceived(), response ->
+        {
+            Response res = response.getResponse();
+            RequestId req = response.getRequestId();
+            if (res.getStatus() == 200 && res.getUrl().equals("https://www.e-mareez.com/api/auth/send-verification-code")) {
+                System.out.println(res.getUrl());
+                String responseBody = devTools.send(Network.getResponseBody(req)).getBody();
+
+                JsonObject jsonObject1 = (JsonObject) JsonParser.parseString(responseBody);
+                String accessToken = jsonObject1.get("data").getAsJsonObject().get("temp_token").getAsString();
+                driver.findElement(By.cssSelector("input[class='w-[265px] px-2 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-gray-300 focus:ring-1 focus:ring-gray-300']")).sendKeys(accessToken);
+            }
+        });
+        driver.get("https://e-mareez.com/doctor/login");
+        driver.manage().window().maximize();
+        driver.findElement(By.xpath("//div[@class='flex flex-col m-auto']//span[@class='text-primary-red cursor-pointer hover:border-b-2 hover:border-primary-red'][normalize-space()='Create one']")).click();
+        Thread.sleep(3000);
+        OnlineConsultation(driver);
+    }
+
+
+    static void OnlineConsultation(WebDriver driver) throws InterruptedException {
 
         driver.findElement(By.xpath("//div[@class='flex flex-col m-auto']//button[@class='bg-skin-button-primary text-skin-primary-white rounded p-2 h-search-bar hover:bg-skin-button-primary-hover text-sm w-full'][normalize-space()='Next']")).click();
         //--------------------------------PMDC No--------------------------------------------//
@@ -81,47 +121,10 @@ public class Doctor_Signup_Online {
         driver.findElement(By.xpath("//button[normalize-space()='submit']")).submit();
         Thread.sleep(3000);
     }
-
-
-
-
-
-        public static void main(String[] args) throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
-
-        ChromeOptions opt = new ChromeOptions();
-
-        opt.addArguments("--no-sandbox");
-        opt.addArguments("--start-maximized");
-        opt.addArguments("--window-size=1920,1080");
-        opt.addArguments("--disable-dev-shm-usage");
-
-        opt.addArguments("--headless");
-        WebDriver driver;
-        driver = new ChromeDriver(opt);
-        // Setup Network to access api response
-        DevTools devTools = ((ChromeDriver) driver).getDevTools();
-        devTools.createSession();
-        devTools.send(Network.enable(Optional.empty(),Optional.empty(),Optional.empty()));
-
-        // Add listener to receive API cal response
-        devTools.addListener(Network.responseReceived(), response ->
-        {
-            Response res = response.getResponse();
-            RequestId req = response.getRequestId();
-            if (res.getStatus() == 200 && res.getUrl().equals("https://www.e-mareez.com/api/auth/send-verification-code")) {
-                System.out.println(res.getUrl());
-                String  responseBody = devTools.send(Network.getResponseBody(req)).getBody();
-
-                JsonObject jsonObject1 = (JsonObject) JsonParser.parseString(responseBody);
-                String accessToken = jsonObject1.get("data").getAsJsonObject().get("temp_token").getAsString();
-                driver.findElement(By.cssSelector("input[class='w-[265px] px-2 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-gray-300 focus:ring-1 focus:ring-gray-300']")).sendKeys(accessToken);
-            }
-        });
-        driver.get("https://e-mareez.com/doctor/login");
-        driver.manage().window().maximize();
-        driver.findElement(By.xpath("//div[@class='flex flex-col m-auto']//span[@class='text-primary-red cursor-pointer hover:border-b-2 hover:border-primary-red'][normalize-space()='Create one']")).click();
-        Thread.sleep(3000);
-        OnlineConsultation(driver);
-    }
 }
+
+
+
+
+
+
