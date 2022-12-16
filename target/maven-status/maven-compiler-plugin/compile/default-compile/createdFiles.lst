@@ -1,4 +1,9 @@
 org/example/Testing.class
 org/example/Main.class
+org/example/practice.class
+org/example/Doctor_Signup_Inclinic.class
+org/example/Doctor_Signup.class
 org/example/create_appointments.class
+org/example/Clinic_testing.class
+org/example/patient_book_appointment.class
 org/example/Find_Clinics.class
