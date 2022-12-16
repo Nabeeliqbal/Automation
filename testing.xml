@@ -8,6 +8,8 @@
         <!-- <groups> <run> <exclude name = "Functionality" /> </run> </groups> -->
         <classes>
             <class name="example.Doctor_Signup_Online"></class>
+
+
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
