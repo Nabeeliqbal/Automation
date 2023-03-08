@@ -88,9 +88,9 @@ public class Doctor_Profile_Editable {
         Element.click();
         Thread.sleep(3000);
 
-        //----------------------------Delete Service----------------------------------
-        driver.findElement(By.xpath("//div[@class='MuiBox-root css-13migaq']//div[1]//*[name()='svg']")).click();
-        Thread.sleep(3000);
+//        //----------------------------Delete Service----------------------------------
+//        driver.findElement(By.xpath("//div[@class='MuiBox-root css-13migaq']//div[1]//*[name()='svg']")).click();
+//        Thread.sleep(3000);
 
         //----------------------------Add Service----------------------------------
         driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"))
@@ -125,7 +125,6 @@ public class Doctor_Profile_Editable {
 
     static void EditEducation(WebDriver driver) throws InterruptedException {
         Thread.sleep(3000);
-//
         //----------------------------Click on Edit Button----------------------------------
         driver.findElement(By.xpath("//div[@id='Education']//img[@aria-label='Edit']")).click();
         Thread.sleep(3000);
@@ -176,37 +175,66 @@ public class Doctor_Profile_Editable {
         Thread.sleep(3000);
         driver.findElement(By.xpath("//div[@class='MuiGrid-root MuiGrid-item css-1wxaqej']//img[@aria-label='Edit']")).click();
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//div[@id='demo-simple-select']")).click();
+
+        //--------------------------Designation-----------------------------------------------------------
+        driver.findElement(By.xpath("//div[@id='designation']")).click();
         Thread.sleep(3000);
         Actions keydown = new Actions(driver);
-        keydown.sendKeys(Keys.chord(Keys.DOWN, Keys.ENTER)).perform();
+        keydown.sendKeys(Keys.chord(Keys.DOWN,Keys.DOWN,Keys.DOWN, Keys.ENTER)).perform();
         Thread.sleep(3000);
-        WebElement email = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
+
+        //-------------------------First Name-----------------------------------------------------------
+        WebElement First_Name = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
+        First_Name.sendKeys(Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,
+                Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,
+                Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,
+                Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE);
+        Thread.sleep(3000);
+        First_Name.sendKeys("Sufyan");
+        Thread.sleep(3000);
+
+        //---------------------------Last Name--------------------------------------------------------------
+        WebElement Last_Name = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
+        Last_Name.sendKeys(Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,
+                Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,
+                Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,
+                Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE);
+        Thread.sleep(3000);
+        Last_Name.sendKeys("Akhtar");
+
+        //---------------------------City--------------------------------------------------------------
+        driver.findElement(By.xpath("//input[@id='combo-box-demo']")).click();
+        Thread.sleep(3000);
+        Actions keyDown = new Actions(driver);
+        keyDown.sendKeys(Keys.chord(Keys.DOWN,Keys.DOWN,Keys.ENTER)).perform();
+        Thread.sleep(3000);
+
+        //---------------------------Email--------------------------------------------------------------
+        WebElement email = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
         email.sendKeys(Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,
                 Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,
                 Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,
-                Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,
-                Keys.BACK_SPACE, Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,
                 Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE);
         Thread.sleep(3000);
-        email.sendKeys("123@gmail.com");
+        email.sendKeys("sufyan123@gmail.com");
         Thread.sleep(3000);
-        WebElement experience = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
-         experience.sendKeys(Keys.BACK_SPACE,Keys.BACK_SPACE);
+
+        //---------------------------Experience--------------------------------------------------------------
+        WebElement experience = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
+        experience.sendKeys(Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE,Keys.BACK_SPACE);
         Thread.sleep(3000);
-        experience.sendKeys("4");
+        experience.sendKeys("10");
+        Thread.sleep(3000);
+
+        //---------------------------Add Button--------------------------------------------------------------
         driver.findElement(By.xpath("//button[@type='submit']")).submit();
+        Thread.sleep(3000);
         EditFee(driver);
     }
 
 
-    static void OnlineConsultationProfile(WebDriver driver) throws InterruptedException {
-        driver.findElement(By.xpath("//div[normalize-space()='N2']")).click();
-        Thread.sleep(3000);
-        Actions keydown = new Actions(driver);
-        keydown.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
-        Thread.sleep(3000);
-        driver.findElement(By.xpath("//*[name()='path' and contains(@d,'M12 8c1.1 ')]")).click();
+    static void DoctorProfile(WebDriver driver) throws InterruptedException {
+        driver.findElement(By.xpath("//button[@aria-label='show more']//*[name()='svg']")).click();
         Thread.sleep(3000);
         driver.findElement(By.xpath("//li[normalize-space()='Profile']")).click();
         Thread.sleep(3000);
@@ -227,7 +255,7 @@ public class Doctor_Profile_Editable {
         devTools.addListener(Network.responseReceived(), response -> {
             Response res = response.getResponse();
             RequestId req = response.getRequestId();
-            if (res.getStatus() == 200 && res.getUrl().equals("https://www.e-mareez.com/api/auth/send-verification-code")) {
+            if (res.getStatus() == 200 && res.getUrl().equals("https://mareez-care.com/api/auth/send-verification-code")) {
                 System.out.println(res.getUrl());
                 String  responseBody = devTools.send(Network.getResponseBody(req)).getBody();
 
@@ -236,17 +264,17 @@ public class Doctor_Profile_Editable {
                 driver.findElement(By.cssSelector("input[class='w-[265px] px-2 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-gray-300 focus:ring-1 focus:ring-gray-300']")).sendKeys(accessToken);
             }
         });
-        driver.get("https://e-mareez.com/doctor/login");
+        driver.get("https://mareez-care.com/doctor/login");
         driver.manage().window().maximize();
-        driver.findElement(By.xpath("//div[@class='flex flex-col m-auto']//input[@placeholder='03XXXXXXXXX']"))
-                .sendKeys("03315947601");
+        driver.findElement(By.xpath("//div[@class='flex flex-col m-auto']//input[@placeholder='Enter phone number']"))
+                .sendKeys("3067777777");
         Thread.sleep(3000);
         driver.findElement(By.xpath("//div[@class='flex flex-col m-auto']//button[@type='submit'][normalize-space()='Submit']")).submit();
         // OTP
         Thread.sleep(3000);
         driver.findElement(By.xpath("//button[normalize-space()='submit']")).submit();
         Thread.sleep(19000);
-        OnlineConsultationProfile(driver);
+        DoctorProfile(driver);
 
     }
 }

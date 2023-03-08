@@ -1,8 +1,8 @@
-package org.example;
-
+package example;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -14,22 +14,31 @@ import org.openqa.selenium.devtools.v107.network.Network;
 import org.openqa.selenium.devtools.v107.network.model.RequestId;
 import org.openqa.selenium.devtools.v107.network.model.Response;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
 
 import java.util.Optional;
 
-public class Doctor_Signup {
+public class Doctor_Account {
+    @org.junit.Test
+    @Test
 
-    public static void main(String[] args) throws InterruptedException {
+    public  void testcase4() throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
 
+        ChromeOptions opt = new ChromeOptions();
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
+        opt.addArguments("--no-sandbox");
+        opt.addArguments("--start-maximized");
+        opt.addArguments("--window-size=1920,1080");
+        opt.addArguments("--disable-dev-shm-usage");
 
-        WebDriver driver = new ChromeDriver();
+        opt.addArguments("--headless");
+        WebDriver driver;
+        driver = new ChromeDriver(opt);
         // Setup Network to access api response
         DevTools devTools = ((ChromeDriver) driver).getDevTools();
         devTools.createSession();
-        devTools.send(Network.enable(Optional.empty(),Optional.empty(),Optional.empty()));
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
 
         // Add listener to receive API cal response
         devTools.addListener(Network.responseReceived(), response ->
@@ -150,13 +159,7 @@ public class Doctor_Signup {
         Thread.sleep(3000);
 
 
-
-
-
-
-
-
-
     }
 
 }
+
