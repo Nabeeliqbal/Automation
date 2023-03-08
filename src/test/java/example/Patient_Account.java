@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 
 import java.util.Optional;
 
-public class PatientAccount {
+public class Patient_Account {
     @org.junit.Test
     @Test
 
