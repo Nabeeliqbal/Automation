@@ -22,7 +22,7 @@ public class Dr_Add_Prescription {
     @org.junit.Test
     @Test
 
-    public  void testcase4() throws InterruptedException {
+    public  void testcase3() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions opt = new ChromeOptions();

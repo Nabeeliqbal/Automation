@@ -7,14 +7,11 @@
     <test thread-count="5" name="Test">
         <!-- <groups> <run> <exclude name = "Functionality" /> </run> </groups> -->
         <classes>
-
-
             <class name="example.Patient_Account"></class>
             <class name="example.Dr_Add_Prescription"></class>
             <class name="example.Doctor_Account"></class>
             <class name="example.Clinic_Account"></class>
-
-
+            <class name="example.Staff_Account"></class>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -4,6 +4,8 @@ org/example/Landing_page_filter.class
 org/example/Clinic_Signup_Silver_packg.class
 org/example/Doctor_Profile_Editable.class
 org/example/Five_Star_Rating.class
+org/example/Clinic_Signup.class
+org/example/Staff_Login.class
 org/example/Doctor_Signup_Inclinic.class
 org/example/patient_signup.class
 org/example/Landing_page_all_buttons.class
