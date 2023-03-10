@@ -12,6 +12,7 @@
             <class name="example.Doctor_Account"></class>
             <class name="example.Clinic_Account"></class>
             <class name="example.Staff_Account"></class>
+            <class name="example.Dr_Create_Appnt"></class>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

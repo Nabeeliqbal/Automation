@@ -11,5 +11,6 @@ org/example/patient_signup.class
 org/example/Landing_page_all_buttons.class
 org/example/Doctor_Signup.class
 org/example/Clinic_testing.class
+org/example/Dr_Create_Appnt.class
 org/example/Clinic_login_All_Scenarios.class
 org/example/Find_Clinics.class
