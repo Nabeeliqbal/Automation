@@ -28,6 +28,7 @@ public class Dr_Create_Appnt {
         ChromeOptions opt = new ChromeOptions();
 
         opt.addArguments("--no-sandbox");
+        opt.addArguments("--remote-allow-origins=*");
         opt.addArguments("--start-maximized");
         opt.addArguments("--window-size=1920,1080");
         opt.addArguments("--disable-dev-shm-usage");

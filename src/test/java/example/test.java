@@ -43,7 +43,6 @@ public class test {
     public  void Header() throws InterruptedException {
         driver = ChromeUtils.getChromeDriverDev();
         DevTools devTools = ((ChromeDriver) driver).getDevTools();
-
         devTools.createSession();
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
         // Add listener to receive API cal response
@@ -60,8 +59,7 @@ public class test {
                 driver.findElement(By.cssSelector("input[class='w-[265px] px-2 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-gray-300 focus:ring-1 focus:ring-gray-300']")).sendKeys(accessToken);
             }
         });
-        Boolean isSuccess = LoginRoutines.Login(driver, "302-8787871");
-
+        Boolean isSuccess = LoginRoutines.Doctor_Login(driver, "3028787871");
         if (!isSuccess) {
             driver.quit();
         }
@@ -78,130 +76,131 @@ public class test {
 //        driver.findElement(By.xpath("//button[@type='submit']")).submit();
 //        Thread.sleep(6000);
     }
-//    @DisplayName("A--Edit Online Dr Profile & Skip Optional Details")
+        @DisplayName("A--Edit Online Dr Profile & Skip Optional Details")
     @Test
     public void Skip_Optional_Details_Edit_Profile()  throws InterruptedException {
 
-//        this.Header();
-//        //-------------Dr Profile
-//        System.out.println("Here...");
-//        By locator = By.xpath("//button[@aria-label='show more']//*[name()='svg']");
-//        System.out.println("Here...2");
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(5));
-//        System.out.println("Here...3");
-//        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-//        WebElement fooButton = driver.findElement(locator);
-//        fooButton.click();
-//        Thread.sleep(3000);
-//        driver.findElement(By.xpath("//li[normalize-space()='Profile']")).click();
-//        Thread.sleep(3000);
+        this.Header();
+        //-------------Dr Profile
+        System.out.println("Here...");
+        By locator = By.xpath("//button[@aria-label='show more']//*[name()='svg']");
+        System.out.println("Here...2");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(5));
+        System.out.println("Here...3");
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        WebElement fooButton = driver.findElement(locator);
+        fooButton.click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//li[normalize-space()='Profile']")).click();
+        Thread.sleep(3000);
 //        By locator1 = By.xpath("//div[@class='MuiGrid-root MuiGrid-item css-1wxaqej']//img[@aria-label='Edit']");
 //        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(10));
 //        wait1.until(ExpectedConditions.presenceOfElementLocated(locator1));
 //        WebElement fooButton1 = driver.findElement(locator1);
 //        fooButton1.click();
 //        Thread.sleep(3000);
-//
+            driver.findElement(By.xpath("//div[@class='MuiGrid-root MuiGrid-item css-1wxaqej']//img[@aria-label='Edit']")).click();
+
 //        //-----------------------------Designation
-//        Thread.sleep(3000);
-//        driver.findElement(By.xpath("//div[@id='designation']")).click();
-//        Thread.sleep(3000);
-//        Actions designation = new Actions(driver);
-//        designation.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
-//        Thread.sleep(3000);
-//
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//div[@id='designation']")).click();
+        Thread.sleep(3000);
+        Actions designation = new Actions(driver);
+        designation.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
+        Thread.sleep(3000);
+
 //        //-----------------------------First & Last Name
-//        WebElement first_name = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
-//        Thread.sleep(3000);
-//        first_name.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE);
-//        Thread.sleep(3000);
-//        first_name.sendKeys("Aroush");
-//        Thread.sleep(3000);
-//        WebElement last_name = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
-//        Thread.sleep(3000);
-//        last_name.sendKeys(Keys.chord(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE));
-//        Thread.sleep(3000);
-//        last_name.sendKeys("ahmed");
-//        Thread.sleep(3000);
-//
+        WebElement first_name = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
+        Thread.sleep(3000);
+        first_name.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE);
+        Thread.sleep(3000);
+        first_name.sendKeys("Aroush");
+        Thread.sleep(3000);
+        WebElement last_name = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
+        Thread.sleep(3000);
+        last_name.sendKeys(Keys.chord(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE));
+        Thread.sleep(3000);
+        last_name.sendKeys("ahmed");
+        Thread.sleep(3000);
+
 //        //-----------------------------Experience
-//        WebElement experience = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
-//        Thread.sleep(3000);
-//        experience.sendKeys(Keys.chord(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE));
-//        Thread.sleep(3000);
-//        experience.sendKeys("15");
-//        Thread.sleep(3000);
-//
+        WebElement experience = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
+        Thread.sleep(3000);
+        experience.sendKeys(Keys.chord(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE));
+        Thread.sleep(3000);
+        experience.sendKeys("15");
+        Thread.sleep(3000);
+
 //        //-----------------------------Submit
-//        driver.findElement(By.xpath("//button[@type='submit']")).submit();
-//        Thread.sleep(3000);
-//    }
+        driver.findElement(By.xpath("//button[@type='submit']")).submit();
+        Thread.sleep(3000);
+    }
 //
-//    @DisplayName("B--Edit Online Dr Profile & Add Optional Details")
-//    @Test
-//    public void Add_Optional_Details_Edit_Profile( ) throws InterruptedException {
-//        this.Header();
+    @DisplayName("B--Edit Online Dr Profile & Add Optional Details")
+    @Test
+    public void Add_Optional_Details_Edit_Profile( ) throws InterruptedException {
+        this.Header();
 //        //-------------Dr Profile
-//        By locator = By.xpath("//button[@aria-label='show more']//*[name()='svg']");
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(10));
-//        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-//        WebElement fooButton = driver.findElement(locator);
-//        fooButton.click();
-//        Thread.sleep(3000);
-//        driver.findElement(By.xpath("//li[normalize-space()='Profile']")).click();
-//        Thread.sleep(6000);
-//        By locator1 = By.xpath("//div[@class='MuiGrid-root MuiGrid-item css-1wxaqej']//img[@aria-label='Edit']");
-//        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(5));
-//        wait1.until(ExpectedConditions.presenceOfElementLocated(locator1));
-//        WebElement fooButton1 = driver.findElement(locator1);
-//        fooButton1.click();
-//        Thread.sleep(3000);
+        By locator = By.xpath("//button[@aria-label='show more']//*[name()='svg']");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        WebElement fooButton = driver.findElement(locator);
+        fooButton.click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//li[normalize-space()='Profile']")).click();
+        Thread.sleep(6000);
+        By locator1 = By.xpath("//div[@class='MuiGrid-root MuiGrid-item css-1wxaqej']//img[@aria-label='Edit']");
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(5));
+        wait1.until(ExpectedConditions.presenceOfElementLocated(locator1));
+        WebElement fooButton1 = driver.findElement(locator1);
+        fooButton1.click();
+        Thread.sleep(3000);
 //
 //        //-----------------------------Designation
-//        driver.findElement(By.xpath("//div[@id='designation']")).click();
-//        Thread.sleep(3000);
-//        Actions designation = new Actions(driver);
-//        designation.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
-//        Thread.sleep(3000);
+        driver.findElement(By.xpath("//div[@id='designation']")).click();
+        Thread.sleep(3000);
+        Actions designation = new Actions(driver);
+        designation.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
+        Thread.sleep(3000);
 //
 //        //-----------------------------First & Last Name
-//        WebElement first_name = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
-//        Thread.sleep(3000);
-//        first_name.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE);
-//        Thread.sleep(3000);
-//        first_name.sendKeys("Aroush");
-//        Thread.sleep(3000);
-//        WebElement last_name = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
-//        Thread.sleep(3000);
-//        last_name.sendKeys(Keys.chord(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE));
-//        Thread.sleep(3000);
-//        last_name.sendKeys("ahmed");
-//        Thread.sleep(3000);
+        WebElement first_name = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
+        Thread.sleep(3000);
+        first_name.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE);
+        Thread.sleep(3000);
+        first_name.sendKeys("Aroush");
+        Thread.sleep(3000);
+        WebElement last_name = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
+        Thread.sleep(3000);
+        last_name.sendKeys(Keys.chord(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE));
+        Thread.sleep(3000);
+        last_name.sendKeys("ahmed");
+        Thread.sleep(3000);
 //
 //        //-----------------------------City
-//        driver.findElement(By.xpath("//input[@id='combo-box-demo']")).click();
-//        Thread.sleep(3000);
-//        Actions city = new Actions(driver);
-//        city.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
-//        Thread.sleep(3000);
+        driver.findElement(By.xpath("//input[@id='combo-box-demo']")).click();
+        Thread.sleep(3000);
+        Actions city = new Actions(driver);
+        city.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
+        Thread.sleep(3000);
 //
 //        //-----------------------------Email
-//        WebElement email = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
-//        Thread.sleep(3000);
-//        email.sendKeys(Keys.chord(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE,
-//                Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE));
-//        Thread.sleep(3000);
-//        email.sendKeys("aroushahmed555@gmail.com");
-//        Thread.sleep(3000);
+        WebElement email = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
+        Thread.sleep(3000);
+        email.sendKeys(Keys.chord(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE,
+                Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE));
+        Thread.sleep(3000);
+        email.sendKeys("aroushahmed555@gmail.com");
+        Thread.sleep(3000);
 //
 //
 //        //-----------------------------Experience
-//        WebElement experience = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
-//        Thread.sleep(3000);
-//        experience.sendKeys(Keys.chord(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE));
-//        Thread.sleep(3000);
-//        experience.sendKeys("15");
-//        Thread.sleep(3000);
+        WebElement experience = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
+        Thread.sleep(3000);
+        experience.sendKeys(Keys.chord(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE));
+        Thread.sleep(3000);
+        experience.sendKeys("15");
+        Thread.sleep(3000);
 //
 //        //-----------------------------Upload Picture
 //        WebElement picture = driver.findElement(By.xpath("/html/body/div[3]/div[3]/div/div/form/div/div[1]/div[7]/div/div/div/label/input"));
@@ -210,67 +209,66 @@ public class test {
 //        Thread.sleep(3000);
 //
 //        //-----------------------------Submit
-//        driver.findElement(By.xpath("//button[@type='submit']")).submit();
-//        Thread.sleep(3000);
+        driver.findElement(By.xpath("//button[@type='submit']")).submit();
+        Thread.sleep(3000);
 
     }
 
-//    @DisplayName("C--Edit In-Clinic Dr Profile & Skip Optional Details")
-//    @Test
-//    public void Skip_Optional_Details_Edit_Profile_Inclinic() throws InterruptedException {
+    @DisplayName("C--Edit In-Clinic Dr Profile & Skip Optional Details")
+    @Test
+    public void Skip_Optional_Details_Edit_Profile_Inclinic() throws InterruptedException {
 //
 //        //-------------Dr Profile
-//        By locator = By.xpath("//button[@aria-label='show more']//*[name()='svg']");
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(5));
-//        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-//        WebElement fooButton = driver.findElement(locator);
-//        fooButton.click();
-//        Thread.sleep(3000);
-//        driver.findElement(By.xpath("//li[normalize-space()='Profile']")).click();
-//        Thread.sleep(6000);
-//        By locator1 = By.xpath("//div[@class='MuiBox-root css-a39m6n']//img[@aria-label='Edit']");
-//        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(5));
-//        wait1.until(ExpectedConditions.presenceOfElementLocated(locator1));
-//        WebElement fooButton1 = driver.findElement(locator1);
-//        fooButton1.click();
-//        Thread.sleep(3000);
+        By locator = By.xpath("//button[@aria-label='show more']//*[name()='svg']");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        WebElement fooButton = driver.findElement(locator);
+        fooButton.click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//li[normalize-space()='Profile']")).click();
+        Thread.sleep(6000);
+        By locator1 = By.xpath("//div[@class='MuiBox-root css-a39m6n']//img[@aria-label='Edit']");
+        WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(5));
+        wait1.until(ExpectedConditions.presenceOfElementLocated(locator1));
+        WebElement fooButton1 = driver.findElement(locator1);
+        fooButton1.click();
+        Thread.sleep(3000);
 //
 //        //-----------------------------Clinic Name
-//        WebElement clinic_name = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
-//        Thread.sleep(3000);
-//        clinic_name.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE);
-//        Thread.sleep(3000);
-//        clinic_name.sendKeys("Automation Clinic");
-//        Thread.sleep(3000);
+        WebElement clinic_name = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
+        Thread.sleep(3000);
+        clinic_name.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE);
+        Thread.sleep(3000);
+        clinic_name.sendKeys("Automation Clinic");
+        Thread.sleep(3000);
 //
 //        //-----------------------------City
-//        driver.findElement(By.xpath("//input[@id='combo-box-demo']")).click();
-//        Thread.sleep(3000);
-//        Actions city = new Actions(driver);
-//        city.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
-//        Thread.sleep(3000);
+        driver.findElement(By.xpath("//input[@id='combo-box-demo']")).click();
+        Thread.sleep(3000);
+        Actions city = new Actions(driver);
+        city.sendKeys(Keys.chord(Keys.DOWN, Keys.DOWN, Keys.ENTER)).perform();
+        Thread.sleep(3000);
 //
 //        //-----------------------------Phone #
-//        WebElement email = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
-//        Thread.sleep(3000);
-//        email.sendKeys(Keys.chord(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE,
-//                Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE));
-//        Thread.sleep(3000);
-//        email.sendKeys("03214521012");
-//        Thread.sleep(3000);
+        WebElement email = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
+        Thread.sleep(3000);
+        email.sendKeys(Keys.chord(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE,
+                Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE));
+        Thread.sleep(3000);
+        email.sendKeys("03214521012");
+        Thread.sleep(3000);
 //
 //        //-----------------------------Address
-//        WebElement address = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
-//        Thread.sleep(3000);
-//        address.sendKeys(Keys.chord(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE,
-//                Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE));
-//        Thread.sleep(3000);
-//        address.sendKeys("DHa Phase 1, Sector F");
-//        Thread.sleep(3000);
+        WebElement address = driver.findElement(By.cssSelector("body > div:nth-child(4) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)"));
+        Thread.sleep(3000);
+        address.sendKeys(Keys.chord(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE,
+                Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE));
+        Thread.sleep(3000);
+        address.sendKeys("DHa Phase 1, Sector F");
+        Thread.sleep(3000);
 //
 //        //-----------------------------Submit
-//        driver.findElement(By.xpath("//button[@type='submit']")).submit();
-//        Thread.sleep(3000);
-//
-//    }
+        driver.findElement(By.xpath("//button[@type='submit']")).submit();
+        Thread.sleep(3000);
+    }
 }

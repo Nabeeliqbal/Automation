@@ -24,6 +24,7 @@ public class ChromeUtils {
         opt.addArguments("--remote-allow-origins=*");
         opt.addArguments("--window-size=1920,1080");
         opt.addArguments("--disable-dev-shm-usage");
+//        opt.addArguments("--headless");
         return new ChromeDriver(opt);
     }
 

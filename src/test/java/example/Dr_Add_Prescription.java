@@ -26,12 +26,11 @@ public class Dr_Add_Prescription {
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions opt = new ChromeOptions();
-
+        opt.addArguments("--remote-allow-origins=*");
         opt.addArguments("--no-sandbox");
         opt.addArguments("--start-maximized");
         opt.addArguments("--window-size=1920,1080");
         opt.addArguments("--disable-dev-shm-usage");
-
         opt.addArguments("--headless");
         WebDriver driver;
         driver = new ChromeDriver(opt);

@@ -15,11 +15,11 @@ import org.testng.annotations.Test;
 
 import java.util.Optional;
 
-public class Staff_Account {
+public class Patient_Account_Signup_Overseas {
     @org.junit.Test
     @Test
 
-    public  void testcase5() throws InterruptedException {
+    public  void Patient_Overseas_TS_01() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions opt = new ChromeOptions();
