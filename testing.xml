@@ -11,7 +11,8 @@
             <class name="example.Dr_Add_Prescription"></class>
             <class name="example.Doctor_Account_Signup_Inclinic"></class>
             <class name="example.Clinic_Account"></class>
-            <class name="example.Dr_Create_Appnt"></class>
+            <class name="example.Doctor_Account_Signup_Online"></class>
+            <class name="example.Doctor_Account_Setup_Online_1"></class>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
